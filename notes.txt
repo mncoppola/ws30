@@ -1,0 +1,40 @@
+R315 = pin 35 					potential uart rx		blue wire
+R314 = pin 36					potential uart tx		purple wire
+R316 = pin 37
+S100 = pin 49					ground					black wire
+R301 = pin 73	lcd?
+R321 = pin 100					potential uart tx		purple wire
+
+
+pin 55, 56, 62, 63, 64 look interesting for uart
+C219 = pin 62					potential uart rx		blue wire
+R122 = pin 63					potential uart tx		purple wire
+
+both go to R430?
+XXXX = pin 1					possible uart tx		purple wire
+YYYY = pin 2					possible uart rx		blue wire
+
+XXXX = pin 73					possible uart rx		blue wire
+YYYY = pin 76					possible uart tx		purple wire
+
+mac address 00:24:e4:06:59:dc
+
+
+4330b2-roml/sdio-g-idsup-idauth-pno Version: 5.90.195.104 CRC: d93cb1ab Date: Mon 2012-08-27 22:14:27 PDT FWID 01-99870f48
+BCM4330B1 37.4 MHz Class 1.5 Mitsumi Module
+
+
+UART:
+TP406	TX		pin 96 (UART2_TX)		R128
+TP407	CTS
+TP408	RX		pin 95 (UART2_RX)
+TP409	RTS
+
+TP403 -> 6r8 backlight coil
+
+
+jtag probably
+R313 = pin 34	TCLK
+R315 = pin 35	TDI
+R314 = pin 36	TDO
+R316 = pin 37	TMS

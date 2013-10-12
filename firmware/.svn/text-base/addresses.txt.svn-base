@@ -1,0 +1,117 @@
+dword_1FFF0204
+  unk_1FFF07C4
+  unk_1FFF07D4
+  unk_1FFF0844	bank
+  unk_1FFF085C
+ byte_1FFF0950
+ byte_1FFF0954
+ word_1FFF09AC	wverif element
+dword_1FFF0A3C	UART base address
+dword_1FFF0A40
+ word_1FFF0A5C	calibration_params
+ byte_1FFF0AC8	country IE saved?
+dword_1FFF0AD0	&"country code"
+dword_1FFF0ADC	&sub_472A0
+dword_1FFF0AE0	&strdup
+dword_1FFF0AE4	&free
+dword_1FFF0AE8	&malloc
+dword_1FFF0AEC	&sub_459CC
+dword_1FFF0AF8	ref count for priority config interrupts
+dword_1FFF0B00
+dword_1FFF0B04	UART baud rate
+ byte_1FFF0B08	1 = watchdog enabled
+dword_1FFF0B70	shell heapbuf
+ byte_1FFF0B78	shell heapbuf initialized
+dword_1FFF10C8	curl_session
+dword_1FFF10CC	low json memory address
+dword_1FFF10D0	firmware update URL
+dword_1FFF10F8	1 = dblib initialized
+dword_1FFF10FC	pointer to currently selected bank
+dword_1FFF1100	timestamp
+dword_1FFF1104	bank_id
+dword_1FFF1108	(pointer to?) dblib element struct (first field is id/index)
+ byte_1FFF1344
+ byte_1FFF1345
+dword_1FFF135C
+dword_1FFF1360
+dword_1FFF1364
+  unk_1FFF1370
+  unk_1FFF1378
+  unk_1FFF1380
+ byte_1FFF1414	1 = calibrated
+dword_1FFF1420
+dword_1FFF142C
+dword_1FFF1438	weight boot?
+dword_1FFF1610
+  unk_1FFF1618
+ byte_1FFF1658	1 = debug traces (debug messages) enabled
+dword_1FFF165C	function ptr
+dword_1FFF1660	function ptr
+dword_1FFF1664	function ptr
+dword_1FFF1668	function ptr
+dword_1FFF166C	function ptr
+dword_1FFF1670	function ptr
+  unk_1FFF1688
+dword_1FFF16E4
+dword_1FFF16E8
+dword_1FFF16EC
+ word_1FFF5F44
+dword_1FFF6020
+dword_1FFF6064
+dword_1FFF69AC
+dword_1FFF6BCC	high json memory address
+  unk_1FFF6BD0	sessionid
+ word_1FFF6BF0	checksum
+dword_1FFF6BF8	cal zero DAC right
+dword_1FFF6BFC	cal zero DAC left
+dword_1FFF6C04	cal zero Z right
+dword_1FFF6C08	cal zero Z left
+dword_1FFF6CC0	wifi firmware length
+dword_1FFF6CC8	wifi firmware offset
+  unk_1FFF6CD0
+  unk_1FFF6F60	pointer to osl_t struct
+dword_1FFF6F88	network config (dongle host driver)
+dword_1FFF6FA8
+
+ unk_40038000
+ unk_4003D008	something related to the time registers
+ unk_4003E000
+ unk_4003E004
+byte_4003E01F	VBAT register file (CMOS battery voltage?)
+	- bit 1 [x]:
+	- bit 2 [ ]:
+	- bit 3 [ ]:
+	- bit 4 [ ]:
+	- bit 5 [ ]: 1 = no display
+	- bit 6 [x]: 1 = wifi should reconnect
+	- bit 7 [x]:
+	- bit 8 [x]:
+  unk_40048038
+  unk_4004803C
+  unk_4000D000
+
+vE000E104	NVICISER0
+vE000E108	NVICISER1
+vE000E100	NVICISER2
+vE000E280	NVICICPR2
+vE000E284	NVICICPR0
+vE000E288	NVICICPR1
+vE000ED0C	board reset
+
+PRODUCT_LAUNCH_DATE		0x476DA4FF = 1198367999 = Sat Dec 22 18:59:59 EST 2007
+
+
+
+stru_1FFF0844	Default bank
+BANK_1			Bank 1
+BANK_2			Bank 2
+
+
+what is blindcode?  is it something related to secret?
+	format: %6.6d
+	
+something_interrupt() return a sem_lock? (in wl_event_init())
+	what is this?
+
+try 1500000 as a baud rate!	-this looks like it's for bluetooth hci uart
+or 24000
