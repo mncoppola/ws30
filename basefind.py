@@ -99,9 +99,10 @@ if __name__ == "__main__":
             offset = ptr - base
             if offset in str_table:
                 score += ptr_table[ptr]
-        scores.append((base, score))
-        if score >= top_score:
-            top_score = score
-            print "New highest score, 0x%x: %d" % (base, score)
+        if score:
+            scores.append((base, score))
+            if score > top_score:
+                top_score = score
+                print "New highest score, 0x%x: %d" % (base, score)
 
     high_scores(0, 0)
