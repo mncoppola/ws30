@@ -64,13 +64,18 @@ def get_strings(f, size):
     return table
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print "%s: <image>" % sys.argv[0]
-        exit()
+    import argparse
+    parser = argparse.ArgumentParser()
+    def auto_int(x):
+        return int(x, 0)
+    parser.add_argument("--min_addr",  type=auto_int, help="start searching at this address", default=0)
+    parser.add_argument("--max_addr",  type=auto_int, help="stop searching at this address", default=0xf0000000)
+    parser.add_argument("--page_size", type=auto_int, help="search every this many byte", default=0x1000)
+    parser.add_argument("infile", help="file to scan")
+    args = parser.parse_args()
 
-    infile = sys.argv[1]
-    size = os.path.getsize(infile)
-    f = open(infile, "rb")
+    size = os.path.getsize(args.infile)
+    f = open(args.infile, "rb")
     scores = []
 
     print "Scanning binary for strings..."
@@ -85,8 +90,8 @@ if __name__ == "__main__":
     gc.disable()
     signal.signal(signal.SIGINT, high_scores)
 
-    for base in xrange(0, 0xf0000000, 0x1000):
-        if base % 0x10000 == 0:
+    for base in xrange(args.min_addr, args.max_addr, args.page_size):
+        if base % args.page_size == 0:
             print "Trying base address 0x%x" % base
         score = 0
         for ptr in ptr_table.keys():
